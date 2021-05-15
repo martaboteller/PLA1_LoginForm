@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-
     <script src="dist/app.js" type="module"></script>
     <title>Top VSC Extensions List</title>
   </head>
 
   <body>
+    <!--Begining navigation bar-->
     <nav class="navbar navbar" style="background-color: #d3e5f6">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -36,18 +20,59 @@
           />
         </a>
         <h1 style="text-align: left; color: steelblue">TOP VSC Extensions</h1>
-        <span class="navbar-text">
-          <a href="login"
-            ><i class="fas fa-sign-out-alt fa-2x" style="color: slategrey"> </i>
-          </a>
-        </span>
+        <h2>
+          <span class="navbar-text;">
+            <a href="login"
+              ><i
+                class="bi bi-box-arrow-right"
+                style="color: slategrey; width: 16; height: 16"
+              >
+              </i>
+            </a>
+          </span>
+        </h2>
       </div>
     </nav>
+    <!--End of top navigation bar-->
 
     <div class="container-fluid">
-      <div class="row" style="background-color: cadetblue"></div>
+      <div
+        class="card mt-5 ml-3 mr-3 mb-3"
+        *ngFor="let extension of extensions"
+      >
+        <!--Row-->
+        <div class="row ml-0 mr-0">
+          <!--Column with icon-->
+          <div class="col-sm-2 my-auto">
+            <img
+              class="img-fluid"
+              style="border-radius: 50%; max-width: 30%; margin-left: 15%"
+              src="/assets/images/{{ extension.extImg }}"
+              alt="icon_image"
+            />
+          </div>
+          <!--Column with extension name/author-->
+          <div class="col-sm-8 my-auto">
+            <p class="h3 mt-3">{{ extension.extName }}</p>
+            <p class="h4-responsive" style="color: slategray">
+              {{ extension.extAuthor }}
+            </p>
+          </div>
+          <!--Column 'go to detail'-->
+          <!--Pass id on the route-->
+          <div class="col-sm-2 my-auto">
+            <h2>
+              <a routerLink="/detail/{{ extension.id }}"
+                ><i
+                  id="id"
+                  class="bi bi-chevron-right"
+                  style="color: slategray"
+                ></i
+              ></a>
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Injected HTML with extension information here -->
-    <div id="extension_list"></div>
   </body>
 </html>

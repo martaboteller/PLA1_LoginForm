@@ -8,7 +8,7 @@ const routes: Routes = [
   //va en cascada
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'detail', component: DetailComponent },
+  { path: 'detail/:id', component: DetailComponent },
   { path: 'list', component: ListComponent },
   //{ path: '**', redirectTo: '/login' }, //Qualquier otra ruta va a login //para loguear usuarios
 ];

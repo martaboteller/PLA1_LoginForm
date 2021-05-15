@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
+    //Cargar propiedades o claves aquí
   }
 
   //Function to create the form

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { rankExtension } from '../interfaces';
 
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
 export class ExtensionsService {
   private extensionsArray: rankExtension[] = [
@@ -47,6 +47,8 @@ export class ExtensionsService {
       extImg: 'prettier.png',
     },
   ];
+
+  constructor() {}
 
   public getrankedExtensions() {
     return this.extensionsArray;
