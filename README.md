@@ -7,7 +7,7 @@ En aquesta segona setmana afegim un login a la nostra aplicació amb validació 
 
 ### GIF
 
-<img src="https://github.com/martaboteller/PLA1_ListView/blob/master/pla1_login.gif" width="200" height="300" />
+<img src="https://github.com/martaboteller/PLA1_LoginForm/blob/master/pla1_login.gif" width="200" height="300" />
 
 ## Author
 Marta Boteller
