@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { rankExtension } from 'src/app/shared/interfaces';
 import { ExtensionsService } from 'src/app/shared/service/extensions.service';
 import { ActivatedRoute } from '@angular/router';
@@ -12,6 +12,7 @@ export class DetailComponent implements OnInit {
   //Variables
   selectedId: number;
   selectedExtension: rankExtension;
+  @Input() Idnumber: number;
 
   //Initiate service on constructor
   //Will be passing id at route

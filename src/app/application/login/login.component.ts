@@ -16,12 +16,11 @@ export class LoginComponent implements OnInit {
   //Declare a form
   public loginForm: FormGroup;
 
-  //Cuando se instancie llama al módulo router de la instancia Router
+  //Call router and FormBuilder module
   constructor(private router: Router, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.buildForm();
-    //Cargar propiedades o claves aquí
   }
 
   //Function to create the form
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
   doLogin() {
     if (this.loginForm.valid) {
       this.router.navigate(['/list']);
-      //Lleva claudator porque se le pueden poner opciones a la ruta
+      //It has a claudator because it can carry params
     }
   }
 }

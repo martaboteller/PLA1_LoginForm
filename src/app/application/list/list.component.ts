@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { rankExtension } from 'src/app/shared/interfaces';
 import { ExtensionsService } from 'src/app/shared/service/extensions.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -14,7 +15,10 @@ export class ListComponent implements OnInit {
   selectedID: number;
 
   //Call service when initialized
-  constructor(private extensionsService: ExtensionsService) {}
+  constructor(
+    private router: Router,
+    private extensionsService: ExtensionsService
+  ) {}
 
   ngOnInit(): void {
     this.loadData();
@@ -25,8 +29,8 @@ export class ListComponent implements OnInit {
     this.extensions = this.extensionsService.getrankedExtensions();
   }
 
-  //No need to get the id using router link
-  /*  getID(id: number) {
-    this.selectedID = id;
-  }*/
+  //Trying new routes
+  goToDetails(idSelected: number) {
+    this.router.navigate(['/detail/', idSelected]);
+  }
 }
